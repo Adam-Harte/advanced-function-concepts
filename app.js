@@ -34,3 +34,15 @@ const anotherDivision = divide(3, 9);
 console.log(newAddition);
 console.log(division);
 console.log(anotherDivision);
+
+// factory functions
+const taxFactory = (tax) => {
+	const calculateTaxTotal = (amount) => amount * tax;
+	return calculateTaxTotal;
+};
+
+const taxCalculator = taxFactory(0.2);
+const vatCalculator = taxFactory(0.15);
+
+console.log(taxCalculator(200));
+console.log(vatCalculator(370));
