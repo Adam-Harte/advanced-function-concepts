@@ -62,3 +62,62 @@ console.log(vatCalculator(370));
 console.log(name);
 console.log(age);
 console.log(hobbies);
+
+// recursion
+const powerOf = (n, x) => {
+	if (x === 1) {
+		return x;
+	}
+
+	return x * powerOf(n, x - 1);
+};
+
+const twoToPowerOfThree = powerOf(2, 3);
+console.log(twoToPowerOfThree);
+
+const myFriends = {
+	name: 'Adam',
+	friends: [
+		{
+			name: 'Fayzal',
+			friends: [
+				{
+					name: 'Pooles',
+				},
+			],
+		},
+		{
+			name: 'Matt',
+			friends: [
+				{
+					name: 'Grit',
+				},
+			],
+		},
+		{
+			name: 'Andrew',
+			friends: [
+				{
+					name: 'Rad',
+				},
+			],
+		},
+	],
+};
+
+const getFriends = (person) => {
+	const namesList = [];
+
+	if (!person.friends) {
+		return [];
+	}
+
+	for (const friend of person.friends) {
+		namesList.push(friend.name);
+		namesList.push(...getFriends(friend));
+	}
+
+	return namesList;
+};
+
+console.log(getFriends(myFriends));
