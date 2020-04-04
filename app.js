@@ -17,3 +17,20 @@ const newNum = multiply(2, 7);
 
 console.log(total);
 console.log(newNum);
+
+// impure functions
+const addRandom = (a, b) => a + b + Math.random();
+
+let division = 4;
+const divide = (a, b) => {
+	const newDivision = a / b;
+	division = newDivision;
+	return newDivision;
+};
+
+const newAddition = addRandom(2, 8);
+const anotherDivision = divide(3, 9);
+
+console.log(newAddition);
+console.log(division);
+console.log(anotherDivision);
