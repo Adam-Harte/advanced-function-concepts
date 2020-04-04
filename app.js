@@ -46,3 +46,19 @@ const vatCalculator = taxFactory(0.15);
 
 console.log(taxCalculator(200));
 console.log(vatCalculator(370));
+
+// iife
+(function () {
+	var name = 'Adam';
+	var age = '27';
+	var hobbies = ['reading', 'coding', 'cooking', 'gaming'];
+
+	return {
+		name,
+		age,
+	};
+})();
+
+console.log(name);
+console.log(age);
+console.log(hobbies);
